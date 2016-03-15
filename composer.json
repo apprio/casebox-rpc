@@ -1,0 +1,49 @@
+{
+  "name": "caseboxdev/rpc-bundle",
+  "type": "symfony-bundle",
+  "description": "This bundle provides Casebox integration with with Symfony CMF and implements ExtJS RPC communication.",
+  "keywords": [
+    "casebox",
+    "symfony",
+    "rpc"
+  ],
+  "homepage": "https://casebox.org",
+  "license": "AGPL3.0",
+  "authors": [
+    {
+      "name": "Oleg Burlaca",
+      "email": "oleg@burlaca.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Vitalie Turcanu",
+      "email": "vitalie.turcanu@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Ghenadie Bulgac",
+      "email": "bulgac@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Vladimir Melnic",
+      "email": "win32hack@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^5.5|~7.0",
+    "symfony/symfony": "3.0.*"
+  },
+  "require-dev": {
+    "caseboxdev/core-bundle": "*"
+  },
+  "suggest": {
+    "caseboxdev/rest-bundle": "Add support for Casebox REST API."
+  },
+  "autoload": {
+    "psr-4": {
+      "Casebox\\RpcBundle\\": "src/"
+    }
+  }
+}

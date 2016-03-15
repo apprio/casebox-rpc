@@ -1,0 +1,10 @@
+services:
+    casebox_rpc.service.rpc_api_service:
+        class: Casebox\RpcBundle\Service\RpcApiService
+        calls:
+            - [ setRpcApiConfigService, [ "@casebox_rpc.service.rpc_api_config_service" ] ]
+
+    casebox_rpc.service.rpc_api_config_service:
+        class: Casebox\RpcBundle\Service\RpcApiConfigService
+
+
