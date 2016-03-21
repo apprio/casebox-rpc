@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<phpunit bootstrap="bootstrap.php">
+     <!-- Add files not covered with tests into Code Coverage Analysis -->
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../</directory>
+            <exclude suffix=".php">../Tests</exclude>
+        </whitelist>
+
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../</directory>
+            <exclude suffix=".php">../Tests</exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-clover" target="../../../../../build/logs/clover-rpc.xml"/>
+    </logging>
+
+
+<testsuites>
+    <testsuite name="MAIN">
+       <exclude suffix=".php">../Tests</exclude>
+    </testsuite>
+</testsuites>
+
+</phpunit>
