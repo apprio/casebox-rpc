@@ -20,7 +20,7 @@
 
 <testsuites>
     <testsuite name="MAIN">
-       <exclude suffix=".php">../Tests</exclude>
+       <directory suffix=".php">../Tests/rpc</directory>
     </testsuite>
 </testsuites>
 
