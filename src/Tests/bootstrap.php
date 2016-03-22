@@ -16,7 +16,7 @@ require_once $autoloadFile;
 // configure guzzle
 function getHttpBaseUrl()
 {
-    return 'http://192.168.33.3.xip.io/c/default/';
+    return 'http://test.casebox.local/c/test/';
 }
 
 /**
