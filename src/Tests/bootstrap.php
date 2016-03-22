@@ -16,7 +16,7 @@ require_once $autoloadFile;
 // configure guzzle
 function getHttpBaseUrl()
 {
-    return 'http://localhost/c/test/';
+    return 'http://localhost:8080/c/default/';
 }
 
 /**
