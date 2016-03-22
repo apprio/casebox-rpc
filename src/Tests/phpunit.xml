@@ -3,18 +3,18 @@
      <!-- Add files not covered with tests into Code Coverage Analysis -->
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../</directory>
-            <exclude suffix=".php">../Tests</exclude>
+            <directory suffix=".php">../../../../../vendor/caseboxdev/core-bundle/src/</directory>
+            <exclude suffix=".php">../../../../../vendor/caseboxdev/core-bundle/src/Tests</exclude>
         </whitelist>
 
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../</directory>
-            <exclude suffix=".php">../Tests</exclude>
+            <directory suffix=".php">../../../../../vendor/caseboxdev/core-bundle/src/</directory>
+            <exclude suffix=".php">../../../../../vendor/caseboxdev/core-bundle/src/Tests</exclude>
         </whitelist>
     </filter>
 
     <logging>
-        <log type="coverage-clover" target="../../../../../build/logs/clover-rpc.xml"/>
+        <log type="coverage-clover" target="../../../../../build/logs/clover.xml"/>
     </logging>
 
 
