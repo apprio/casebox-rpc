@@ -16,7 +16,7 @@ require_once $autoloadFile;
 // configure guzzle
 function getHttpBaseUrl()
 {
-    return 'http://localhost:8080/c/default/';
+    return 'http://test.casebox.local:8080/c/default/';
 }
 
 /**
