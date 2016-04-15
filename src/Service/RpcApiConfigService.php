@@ -2,15 +2,48 @@
 
 namespace Casebox\RpcBundle\Service;
 
+use Casebox\CoreBundle\Service\Cache;
+
 /**
  * Class RpcApiConfigService
  */
 class RpcApiConfigService
 {
     /**
+     * @var array
+     */
+    protected $config;
+
+    /**
      * @return array
      */
     public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * @param array $config
+     *
+     * @return RpcApiConfigService $this
+     */
+    public function setConfig(array $config)
+    {
+        if (empty($this->config)) {
+            $this->config = $config;
+        } else {
+            $this->config = array_merge($this->config, $config);
+        }
+
+        Cache::set('ExtDirectAPI', $this->config);
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDefaultConfig()
     {
         $api = [
             'CB_Browser' => [
@@ -191,8 +224,6 @@ class RpcApiConfigService
                 ],
             ],
         ];
-
-        \Casebox\CoreBundle\Service\Cache::set('ExtDirectAPI', $api);
 
         return $api;
     }

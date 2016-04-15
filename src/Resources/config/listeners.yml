@@ -5,3 +5,9 @@ services:
         arguments: [ "@service_container" ]
         tags:
             - { name: kernel.event_listener, event: kernel.exception }
+
+    casebox_rpc.event_listener.rpc_api_default_config_listener:
+        class: Casebox\RpcBundle\EventListener\RpcApiDefaultConfigListener
+        arguments: [ "@service_container" ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }
