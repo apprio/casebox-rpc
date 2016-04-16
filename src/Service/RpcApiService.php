@@ -4,7 +4,6 @@ namespace Casebox\RpcBundle\Service;
 
 use Casebox\CoreBundle\Service\Cache;
 use Casebox\CoreBundle\Service\Util;
-use Casebox\CoreBundle\Service\User;
 
 class RpcApiService
 {

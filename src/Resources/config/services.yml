@@ -6,5 +6,3 @@ services:
 
     casebox_rpc.service.rpc_api_config_service:
         class: Casebox\RpcBundle\Service\RpcApiConfigService
-
-
