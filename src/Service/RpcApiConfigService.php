@@ -127,8 +127,7 @@ class RpcApiConfigService
             ],
             'CB_Path' => [
                 'methods' => [
-                    'getPath' => ['len' => 1]
-                    ,
+                    'getPath' => ['len' => 1],
                     'getPidPath' => ['len' => 1],
                 ],
             ],

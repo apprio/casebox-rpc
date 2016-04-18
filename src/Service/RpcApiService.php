@@ -4,13 +4,14 @@ namespace Casebox\RpcBundle\Service;
 
 use Casebox\CoreBundle\Service\Cache;
 use Casebox\CoreBundle\Service\Util;
+use Symfony\Component\DependencyInjection\Container;
 
 class RpcApiService
 {
     /**
-     * @var RpcApiConfigService
+     * @var Container
      */
-    protected $rpcApiConfigService;
+    protected $container;
 
     /**
      * @return string
@@ -85,10 +86,15 @@ class RpcApiService
             'method' => $method,
         ];
 
-        $action = str_replace('CB_', 'Casebox_CoreBundle_Service_', $action);
-        $action = str_replace('_', '\\', $action);
-        $o = new $action();
-
+        // Service container compatibility
+        if ($this->container->has($action)) {
+            $o = $this->container->get($action);
+        } else {
+            $action = str_replace('CB_', 'Casebox_CoreBundle_Service_', $action);
+            $action = str_replace('_', '\\', $action);
+            $o = new $action();
+        }
+        
         $params = isset($cdata['data']) && is_array($cdata['data']) ? $cdata['data'] : [];
 
         $r['result'] = call_user_func_array([$o, $method], $params);
@@ -137,17 +143,25 @@ class RpcApiService
      */
     public function getRpcApiConfigService()
     {
-        return $this->rpcApiConfigService;
+        return $this->container->get('casebox_rpc.service.rpc_api_config_service');
     }
 
     /**
-     * @param RpcApiConfigService $rpcApiConfigService
+     * @return Container
+     */
+    public function getContainer()
+    {
+        return $this->container;
+    }
+
+    /**
+     * @param Container $container
      *
      * @return RpcApiService $this
      */
-    public function setRpcApiConfigService(RpcApiConfigService $rpcApiConfigService)
+    public function setContainer(Container $container)
     {
-        $this->rpcApiConfigService = $rpcApiConfigService;
+        $this->container = $container;
 
         return $this;
     }
