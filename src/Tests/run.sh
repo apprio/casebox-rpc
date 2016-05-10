@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-$DIR/../../../../../vendor/bin/phpunit --colors --verbose --debug --bootstrap $DIR/bootstrap.php $DIR/rpc
+PHP=$( which php )
+
+$PHP $DIR/../../../../bin/phpunit --colors --verbose --debug --configuration $DIR/phpunit.xml
