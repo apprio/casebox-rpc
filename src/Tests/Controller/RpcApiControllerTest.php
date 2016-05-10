@@ -25,9 +25,6 @@ class RpcApiControllerTest extends CaseboxRpcTestService
      */
     public function testGetApiAction()
     {
-        $this->assertEquals(Response::HTTP_OK, Response::HTTP_OK); // TRUE
-        return;
-        
         // RemoteAPI
         $request = $this->client->get('/c/'.self::CORE_NAME.'/remote/api', []);
 
@@ -43,9 +40,6 @@ class RpcApiControllerTest extends CaseboxRpcTestService
      */
     public function testRouteAction()
     {
-        $this->assertEquals(Response::HTTP_OK, Response::HTTP_OK); // TRUE
-        return;
-        
         // Test CB_BrowserTree:getChildren method.
         $params = [
             'json' => \GuzzleHttp\json_decode('{"action":"CB_BrowserTree","method":"getChildren","data":[{"from":"tree","path":"/1","node":"root"}],"type":"rpc","tid":7}', true),
