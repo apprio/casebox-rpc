@@ -68,7 +68,5 @@ class RpcApiConfigServiceTest extends CaseboxAppTestService
         $this->assertArrayHasKey('foo', $array);
         $this->assertArrayHasKey('bar', $array['foo']['methods']);
         $this->assertArrayHasKey('baz', $array['foo']['methods']);
-
-        rmdir(__DIR__.'/../../../../../../var/cache/test');
     }
 }

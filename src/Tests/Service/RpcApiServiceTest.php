@@ -123,7 +123,5 @@ class RpcApiServiceTest extends CaseboxAppTestService
         $service = $this->rpcApiService->getContainer();
         $this->assertNotEmpty($service);
         $this->assertInstanceOf('appTestProjectContainer', $service);
-
-        rmdir(__DIR__.'/../../../../../../var/cache/test');
     }
 }
