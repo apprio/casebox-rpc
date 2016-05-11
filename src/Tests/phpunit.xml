@@ -26,20 +26,15 @@
 
     <!-- Add files not covered with tests into Code Coverage Analysis -->
     <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../</directory>
-            <exclude suffix=".php">../Tests</exclude>
-        </whitelist>
-
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">../</directory>
-            <exclude suffix=".php">../Tests</exclude>
+        <whitelist processUncoveredFilesFromWhitelist="true" addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../Tests</directory>
         </whitelist>
     </filter>
 
     <!-- Test suites -->
     <testsuites>
-        <testsuite name="Controller Test Suite">
+        <testsuite name="RpcAPI Test Suite">
+            <directory suffix=".php">Service</directory>
             <directory suffix=".php">Controller</directory>
         </testsuite>
     </testsuites>

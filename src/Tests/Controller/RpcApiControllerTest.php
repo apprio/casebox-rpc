@@ -154,5 +154,7 @@ class RpcApiControllerTest extends CaseboxRpcTestService
 
         // Check if result success is true
         $this->assertEquals(true, $array['result']['success']);
+
+        rmdir(__DIR__.'/../../../../../../var/cache/test');
     }
 }
