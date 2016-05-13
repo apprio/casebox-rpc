@@ -6,6 +6,9 @@ use Casebox\CoreBundle\Service\Cache;
 use Casebox\CoreBundle\Service\Util;
 use Symfony\Component\DependencyInjection\Container;
 
+/**
+ * Class RpcApiService
+ */
 class RpcApiService
 {
     /**
@@ -94,7 +97,7 @@ class RpcApiService
             $action = str_replace('_', '\\', $action);
             $o = new $action();
         }
-        
+
         $params = isset($cdata['data']) && is_array($cdata['data']) ? $cdata['data'] : [];
 
         $r['result'] = call_user_func_array([$o, $method], $params);
@@ -107,8 +110,8 @@ class RpcApiService
 
     /**
      * @param array|string $fns
-     * @param array $cdata
-     * @param null $returnData
+     * @param array        $cdata
+     * @param null         $returnData
      */
     public function doAroundCalls(&$fns, &$cdata, &$returnData = null)
     {
