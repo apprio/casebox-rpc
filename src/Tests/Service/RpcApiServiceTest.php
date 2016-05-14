@@ -114,14 +114,4 @@ class RpcApiServiceTest extends CaseboxAppTestService
         $this->assertNotEmpty($service);
         $this->assertInstanceOf('Casebox\RpcBundle\Service\RpcApiConfigService', $service);
     }
-
-    /**
-     * Test getContainer() method.
-     */
-    public function testgetContainer()
-    {
-        $service = $this->rpcApiService->getContainer();
-        $this->assertNotEmpty($service);
-        $this->assertInstanceOf('appTestProjectContainer', $service);
-    }
 }
