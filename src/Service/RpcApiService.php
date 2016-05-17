@@ -41,7 +41,7 @@ class RpcApiService
         }
 
         $cfg = [
-            'url' => 'remote/router',
+            'url' => '/c/' . $this->container->getParameter('kernel.environment') . '/remote/router',
             'type' => 'remoting',
             'enableBuffer' => true,
             'maxRetries' => 0,
