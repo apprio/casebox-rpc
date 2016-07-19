@@ -63,6 +63,8 @@ class RpcApiController extends Controller
         $http = new Response(null);
 
         if ($loginService->isLogged(false)) {
+            $this->container->get('event_dispatcher')->dispatch('attachRpcApi');
+            
             $this->get('casebox_rpc.service.rpc_api_config_service')->getConfig();
 
             $isForm = false;

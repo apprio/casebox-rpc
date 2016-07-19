@@ -31,8 +31,6 @@ class RpcApiDefaultConfigListener
         if (!$event->isMasterRequest()) {
             return;
         }
-
-        $default = $this->container->get('casebox_rpc.service.rpc_api_config_service')->getDefaultConfig();
-        $this->container->get('casebox_rpc.service.rpc_api_config_service')->setConfig($default);
+        // code...
     }
 }

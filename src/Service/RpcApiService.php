@@ -21,6 +21,9 @@ class RpcApiService
      */
     public function getApi()
     {
+        // Dispatch RPC API
+        $this->container->get('event_dispatcher')->dispatch('attachRpcApi');
+        
         $api = $this->getRpcApiConfigService();
 
         // Convert API config to Ext.Direct spec

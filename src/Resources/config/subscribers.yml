@@ -1,0 +1,8 @@
+services:
+
+    casebox_rpc.event_subscriber.rpc_api_subscriber:
+        class: Casebox\RpcBundle\EventSubscriber\RpcApiSubscriber
+        calls:
+            - [setContainer, ['@service_container']]
+        tags:
+            - { name: kernel.event_subscriber }
